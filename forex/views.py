@@ -190,3 +190,11 @@ class AdminUserUpdateView(APIView):
 
         user.delete()
         return Response({'message': 'User deleted successfully.'}, status=status.HTTP_200_OK)
+
+
+
+
+from django.http import JsonResponse
+
+def health_check(request):
+    return JsonResponse({"status": "ok"})

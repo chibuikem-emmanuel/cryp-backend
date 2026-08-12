@@ -17,8 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from forex.views import health_check
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/", include("forex.urls")),
     path('api/auth/', include('authentication.urls')),
+    path("api/health/", health_check, name="health-check"),
 ]
